@@ -1,0 +1,117 @@
+#include "main.h"
+
+
+
+int tokenizer(CommandInfo *cmd_info)
+{
+	char *token, *delim = " \n\t\r\a\v";
+	size_t size = 64, new_size, i = 0;
+
+	cmd_info->args = malloc(size * sizeof(char *));
+	if (!cmd_info->args)
+		return (1);
+	printf(":tok1:%d\n", cmd_info->status);
+
+	token = strtok(cmd_info->line, delim);
+	while (token)
+	{
+		cmd_info->args[i++] = token;
+		if (i + 2 >= size)
+		{
+			new_size = size * 2;
+			cmd_info->args = _realloc(cmd_info->args, size * sizeof(char *),
+					new_size * sizeof(char *));
+			if (!cmd_info->args)
+				return (1);
+			size = new_size;
+		}
+		token = _strtok(NULL, delim);
+	}
+	cmd_info->args[i] = NULL;
+	printf(":tok2:%d\n", cmd_info->status);
+	print_args(cmd_info->args);
+
+	return (0);
+}
+
+
+
+char *_realloc(char *ptr, size_t src, size_t dest)
+{
+	size_t i;
+	char *newptr = (char *)malloc(dest * sizeof(char));
+
+	if (ptr == NULL)
+		return (newptr);
+
+	if (ptr != NULL && dest == 0)
+	{
+		free(ptr);
+		return (NULL);
+	}
+
+	newptr = malloc(dest);
+	if (newptr == NULL)
+		return (NULL);
+
+	for (i = 0; i < src; i++)
+		newptr[i] = ptr[i];
+
+	free(ptr);
+	return (newptr);
+}
+
+
+	do {
+		++(cmd_info.count);
+		if (readline(&cmd_info))
+			continue;
+
+		if (tokenizer(&cmd_info))
+		{
+			_pute("Memory allocation error\n");
+			continue;
+		}
+
+		ret = run_args(&cmd_info);
+		if (ret && ret != EXIT_LOOP)
+			cmd_info.status = get_error(&cmd_info, ret);
+
+		clean_up(&cmd_info);
+
+	} while (1);
+
+
+
+
+	if (ac >= 2)
+	{
+		cmd_info.count = 1;
+		readline(&cmd_info);
+		if (tokenizer(&cmd_info))
+			_pute("Memory allocation error\n");
+		ret = run_args(&cmd_info, head);
+		if (ret && ret != EXIT_LOOP)
+			cmd_info.status = get_error(&cmd_info, ret);
+		printf("main: %d\n", ac);
+		clean_up(&cmd_info);
+	}
+
+
+/**
+ * handle_line -  handlesline variables
+ * @line: line to treat
+ * @chars_count: line lenght
+ * Return: pointer to treated line
+*/
+char *handle_line(char *line, ssize_t chars_count)
+{
+	char *ptr;
+	ssize_t i;
+
+	for (i = 0; i < chars_count; i++)
+	{
+		if (ptr[0] == '#')
+	} 
+}
+	handle_line(input, chars_count);
