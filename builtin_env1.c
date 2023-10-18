@@ -121,11 +121,13 @@ int unset_env(CommandInfo *cmd_info)
 		_pute("Memory allocation error\n");
 
 	for (i = 0; cmd_info->env[i]; i++)
+	{
 		if (i != k)
 		{
 			new_env[j] = cmd_info->env[i];
 			j++;
 		}
+	}
 
 	new_env[j] = NULL;
 	free(cmd_info->env);

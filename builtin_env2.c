@@ -47,7 +47,6 @@ char *copy_info(char *name, char *value, size_t new_var_len)
 	_strcpy(new, name);
 	_strcat(new, "=");
 	_strcat(new, value);
-	_strcat(new, "\0");
 
 	return (new);
 }

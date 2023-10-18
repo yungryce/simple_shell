@@ -53,6 +53,7 @@ void increment_shlvl(CommandInfo *cmd_info)
 	str = _itoa(shlvl);
 	setenv_c(cmd_info, "SHLVL", str);
 	free(new_shlvl);
+	free(str);
 }
 
 
@@ -66,6 +67,7 @@ void increment_shlvl(CommandInfo *cmd_info)
 */
 void clean_up(CommandInfo *cmd_info)
 {
+	int i;
 
 	/* Free allocated memory for line */
 	if (cmd_info->line)
@@ -77,9 +79,13 @@ void clean_up(CommandInfo *cmd_info)
 	/* Free allocated memory for args */
 	if (cmd_info->args)
 	{
+		for (i = 0; cmd_info->args[i] != NULL; i++)
+		{
+			free(cmd_info->args[i]);
+			cmd_info->args[i] = NULL;
+		}
 		free(cmd_info->args);
 		cmd_info->args = NULL;
 	}
-
 }
 
