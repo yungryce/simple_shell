@@ -153,9 +153,7 @@ int execute(CommandInfo *cmd_info)
 	if (child_pid == 0)
 	{
 		if (execve(cmd_info->command, cmd_info->args, cmd_info->env) == -1)
-		{
 			return (127); /* Not found */
-		}
 	}
 	else
 		do {

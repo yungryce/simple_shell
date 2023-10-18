@@ -39,6 +39,13 @@ char *_strtok(char *str, char *delim)
 	return (token_start);
 }
 
+/**
+ * _memcpy - copy a fixed byte
+ * @dest: pointer to copy to
+ * @src: poiter to copy from
+ * @n: size to copy
+ * Return: dest pointer
+*/
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
@@ -50,6 +57,15 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
+
+/**
+ * fill_an_array - rfill an array witha fixed byte
+ * @a: new pointer to array
+ * @len: len of array
+ * @el: pointer to array
+ *
+ * Return: new pointer to array
+ */
 void *fill_an_array(void *a, int el, unsigned int len)
 {
 	char *p = a;
@@ -64,6 +80,15 @@ void *fill_an_array(void *a, int el, unsigned int len)
 	return (a);
 }
 
+
+/**
+ * _realloc - reallocates a memory block of a double pointer.
+ * @ptr: double pointer to the memory previously allocated.
+ * @old_size: size, in bytes, of the allocated space of ptr.
+ * @new_size: new size, in bytes, of the new memory block.
+ *
+ * Return: new pointer to dest
+ */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *result;
