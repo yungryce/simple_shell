@@ -33,6 +33,7 @@ int set_env(CommandInfo *cmd_info)
 
 	if (!name)
 		return (-1);
+
 	if (name && value)
 		return (setenv_c(cmd_info, name, value));
 	else

@@ -25,7 +25,7 @@ int get_error(CommandInfo *cmd_info, int err_num)
 		error = error_gen(cmd_info, msg);
 		break;
 	case 127:
-		if (access(cmd_info->command, F_OK) != 0)
+		if (access(cmd_info->args[0], F_OK) != 0)
 			msg = ": No such file or directory\n";
 		else
 			msg = ": Command not found\n";
@@ -35,7 +35,11 @@ int get_error(CommandInfo *cmd_info, int err_num)
 		if (_strcmp("exit", cmd_info->args[0]) == 0)
 			error = error_exit(cmd_info);
 		else if (_strcmp("cd", cmd_info->args[0]) == 0)
-			error = error_cd(cmd_info);
+		{
+			msg = ": No such file or directory\n";
+			error = error_gen(cmd_info, msg);
+		}
+			/* error = error_cd(cmd_info); */
 		break;
 	}
 
@@ -69,7 +73,7 @@ char *error_gen(CommandInfo *cmd_info, char *msg)
 	if (!num_str)
 		return (NULL);
 
-	len = _strlen(name) + _strlen(num_str) + _strlen(command) + _strlen(msg) + 9;
+	len = _strlen(name) + _strlen(num_str) + _strlen(command) + _strlen(msg) + 5;
 
 	error = malloc(sizeof(char) * len);
 	if (!error)
@@ -79,12 +83,11 @@ char *error_gen(CommandInfo *cmd_info, char *msg)
 	}
 
 	_strcpy(error, name);
-	_strcat(error, ": line ");
+	_strcat(error, ": ");
 	_strcat(error, num_str);
 	_strcat(error, ": ");
 	_strcat(error, command);
 	_strcat(error, msg);
-	_strcat(error, "\0");
 
 	free(num_str);
 
@@ -113,8 +116,8 @@ char *error_exit(CommandInfo *cmd_info)
 		return (NULL);
 
 	len = _strlen(name) + _strlen(num_str) + _strlen(command);
-	len += _strlen(msg) + _strlen(handle) + 5;
-	error = malloc(sizeof(char) * (len + 1));
+	len += _strlen(msg) + _strlen(handle) + 6;
+	error = malloc(sizeof(char) * (len));
 	if (!error)
 	{
 		free(num_str);
@@ -127,7 +130,7 @@ char *error_exit(CommandInfo *cmd_info)
 	_strcat(error, command);
 	_strcat(error, msg);
 	_strcat(error, handle);
-	_strcat(error, "\n\0");
+	_strcat(error, "\n");
 	free(num_str);
 
 	return (error);

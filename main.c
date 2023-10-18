@@ -47,7 +47,13 @@ int main(int ac, char **av)
 		if (ret && ret != EXIT_LOOP)
 		{
 			cmd_info.status = get_error(&cmd_info, ret);
-			break;
+			if (isatty(STDIN_FILENO))
+			{
+				clean_up(&cmd_info);
+				continue;
+			}
+			else
+				break;
 		}
 		clean_up(&cmd_info);
 
