@@ -42,14 +42,12 @@ int get_error(CommandInfo *cmd_info, int err_num)
 			/* error = error_cd(cmd_info); */
 		break;
 	}
-
 	if (error)
 	{
 		write(STDERR_FILENO, error, _strlen(error));
 		free(error);
 		return (err_num);
 	}
-
 	return (0);
 }
 
