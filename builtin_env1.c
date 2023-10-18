@@ -127,6 +127,8 @@ int unset_env(CommandInfo *cmd_info)
 			new_env[j] = cmd_info->env[i];
 			j++;
 		}
+		else
+			free(cmd_info->env[i]);
 	}
 
 	new_env[j] = NULL;
