@@ -5,7 +5,6 @@ This is a collaborative implementation of a shell in C that allows users to inte
 ## Contributors
 
 - [Chigbu Joshua](https://github.com/yungryce)
-- [Jeremiah Adetunji](https://github.com/Jerryseun)
 
 ## Features
 
