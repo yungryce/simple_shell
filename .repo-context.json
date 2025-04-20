@@ -1,0 +1,86 @@
+{
+  "project_identity": {
+    "name": "Simple Shell",
+    "type": "education",
+    "scope": "repository",
+    "is_independent": true,
+    "description": "UNIX command line interpreter implementation in C"
+  },
+  "tech_stack": {
+    "primary": ["C"],
+    "secondary": ["Shell Scripting", "POSIX Standards"],
+    "key_libraries": ["stdio.h", "stdlib.h", "unistd.h", "sys/wait.h", "sys/stat.h", "sys/types.h"]
+  },
+  "skill_manifest": {
+    "technical": [
+      "Process Management",
+      "Memory Management",
+      "System Calls",
+      "Command Interpretation",
+      "Error Handling",
+      "Signal Handling",
+      "File System Operations",
+      "Custom Library Implementation"
+    ],
+    "domain": [
+      "Shell Implementation",
+      "Command Line Interface",
+      "POSIX Compliance",
+      "Operating System Interaction"
+    ]
+  },
+  "components": {
+    "main_process": {
+      "type": "core",
+      "path": "/main.c",
+      "description": "Main shell loop that reads, parses, and executes commands"
+    },
+    "input_processing": {
+      "type": "core",
+      "path": "/_getline.c",
+      "description": "Input reading and preprocessing"
+    },
+    "command_parsing": {
+      "type": "core",
+      "path": "/parser.c",
+      "description": "Command parsing and interpretation"
+    },
+    "path_resolution": {
+      "type": "utility",
+      "path": "/path_parse.c",
+      "description": "Resolve command paths in PATH environment"
+    },
+    "data_structures": {
+      "type": "utility",
+      "path": "/lists.c, /list_handler.c",
+      "description": "Linked list implementation and manipulation"
+    },
+    "builtin_commands": {
+      "type": "feature",
+      "path": "/builtin_help1.c, /builtin_help2.c",
+      "description": "Implementation of shell built-in commands"
+    },
+    "error_handling": {
+      "type": "utility",
+      "path": "/error.c",
+      "description": "Error detection and reporting mechanisms"
+    },
+    "string_utils": {
+      "type": "utility",
+      "path": "/string_functions.c",
+      "description": "Custom string manipulation functions"
+    }
+  },
+  "design_patterns": {
+    "command_pattern": "Command parsing and execution follows the command pattern",
+    "factory_pattern": "Command identification and creation follows a factory-like pattern",
+    "singleton_pattern": "Shell state is maintained in a singleton-like structure"
+  },
+  "project_goals": [
+    "Create a functioning UNIX command interpreter",
+    "Implement basic shell features like built-in commands",
+    "Demonstrate understanding of process creation and management",
+    "Handle command line parsing and execution",
+    "Implement proper error handling and reporting"
+  ]
+}
