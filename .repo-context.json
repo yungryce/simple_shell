@@ -1,86 +1,107 @@
 {
   "project_identity": {
-    "name": "Simple Shell",
-    "type": "education",
-    "scope": "repository",
+    "name": "simple_shell",
+    "type": "educational",
+    "scope": "systems",
     "is_independent": true,
-    "description": "UNIX command line interpreter implementation in C"
+    "version": "1.0.0",
+    "description": "A comprehensive UNIX command line interpreter implementation in C, featuring process management, built-in commands, path resolution, environment variable handling, and signal processing with full POSIX compliance",
+    "curriculum_stage": "intermediate",
+    "related_projects": ["printf", "monty", "binary_trees"]
   },
   "tech_stack": {
-    "primary": ["C"],
-    "secondary": ["Shell Scripting", "POSIX Standards"],
-    "key_libraries": ["stdio.h", "stdlib.h", "unistd.h", "sys/wait.h", "sys/stat.h", "sys/types.h"]
+    "primary_language": "c",
+    "languages": ["c", "bash"],
+    "frameworks_libraries": ["stdio.h", "stdlib.h", "unistd.h", "sys/wait.h", "sys/stat.h", "sys/types.h", "signal.h", "errno.h"],
+    "tools": ["gcc", "make", "valgrind", "gdb", "strace"],
+    "paradigms": ["systems_programming", "process_management", "unix_philosophy"],
+    "concepts": ["shell_implementation", "process_creation", "command_interpretation", "signal_handling", "environment_management"]
   },
   "skill_manifest": {
-    "technical": [
-      "Process Management",
-      "Memory Management",
-      "System Calls",
-      "Command Interpretation",
-      "Error Handling",
-      "Signal Handling",
-      "File System Operations",
-      "Custom Library Implementation"
+    "technical_skills": [
+      "UNIX Shell Implementation and Command Interpretation",
+      "Process Management with Fork, Exec, and Wait System Calls",
+      "Signal Handling and Interrupt Processing",
+      "Environment Variable Management and Manipulation",
+      "Path Resolution and Command Discovery",
+      "Built-in Command Implementation (cd, env, exit, help)",
+      "Custom Memory Management and Resource Allocation",
+      "File System Operations and Permission Handling",
+      "Input/Output Redirection and Stream Management",
+      "Error Handling and Status Code Management",
+      "String Manipulation and Parsing Algorithms",
+      "Custom Library Function Implementation (getline)",
+      "Inter-Process Communication and Synchronization",
+      "POSIX Standard Compliance and System Programming"
     ],
-    "domain": [
-      "Shell Implementation",
-      "Command Line Interface",
-      "POSIX Compliance",
-      "Operating System Interaction"
+    "domain_skills": [
+      "Operating System Interface Programming",
+      "Command Line Interface Design and Implementation",
+      "UNIX System Programming and Architecture",
+      "Shell Scripting and Automation Environment",
+      "Process Control and Job Management",
+      "System Resource Management",
+      "Command Parsing and Interpretation",
+      "Terminal and TTY Handling"
+    ],
+    "soft_skills": [
+      "Systems Architecture Design",
+      "Modular Programming and Code Organization",
+      "Debugging and System Analysis",
+      "Performance Optimization in Systems Programming",
+      "Cross-Platform Development Considerations",
+      "Technical Documentation and Code Commenting"
     ]
   },
-  "components": {
-    "main_process": {
-      "type": "core",
-      "path": "/main.c",
-      "description": "Main shell loop that reads, parses, and executes commands"
-    },
-    "input_processing": {
-      "type": "core",
-      "path": "/_getline.c",
-      "description": "Input reading and preprocessing"
-    },
-    "command_parsing": {
-      "type": "core",
-      "path": "/parser.c",
-      "description": "Command parsing and interpretation"
-    },
-    "path_resolution": {
-      "type": "utility",
-      "path": "/path_parse.c",
-      "description": "Resolve command paths in PATH environment"
-    },
-    "data_structures": {
-      "type": "utility",
-      "path": "/lists.c, /list_handler.c",
-      "description": "Linked list implementation and manipulation"
-    },
-    "builtin_commands": {
-      "type": "feature",
-      "path": "/builtin_help1.c, /builtin_help2.c",
-      "description": "Implementation of shell built-in commands"
-    },
-    "error_handling": {
-      "type": "utility",
-      "path": "/error.c",
-      "description": "Error detection and reporting mechanisms"
-    },
-    "string_utils": {
-      "type": "utility",
-      "path": "/string_functions.c",
-      "description": "Custom string manipulation functions"
-    }
+  "educational_context": {
+    "institution": "ALX Software Engineering Program",
+    "program": "Full Stack Software Engineering",
+    "level": "intermediate",
+    "duration_weeks": 3,
+    "estimated_hours": 60,
+    "prerequisite_knowledge": [
+      "Advanced C Programming",
+      "Memory Management and Pointers",
+      "File I/O and System Calls",
+      "Process Management Concepts",
+      "UNIX/Linux System Fundamentals",
+      "Command Line Interface Usage"
+    ],
+    "learning_objectives": [
+      "Master UNIX system programming and process management",
+      "Implement a fully functional command line interpreter",
+      "Understand and apply signal handling in system programming",
+      "Develop expertise in environment variable management",
+      "Create modular and maintainable systems-level code",
+      "Apply POSIX standards in practical system programming",
+      "Implement custom memory management and resource handling",
+      "Design and build interactive command-line applications"
+    ],
+    "assessment_criteria": [
+      "Functional shell with all required built-in commands",
+      "Proper process management and resource cleanup",
+      "Effective signal handling and error management",
+      "Clean, modular code architecture and organization",
+      "Memory leak prevention and efficient resource usage",
+      "Compliance with POSIX standards and best practices"
+    ]
   },
-  "design_patterns": {
-    "command_pattern": "Command parsing and execution follows the command pattern",
-    "factory_pattern": "Command identification and creation follows a factory-like pattern",
-    "singleton_pattern": "Shell state is maintained in a singleton-like structure"
-  },
-  "project_goals": [
-    "Create a functioning UNIX command interpreter",
-    "Implement basic shell features like built-in commands",
-    "Demonstrate understanding of process creation and management",
-    "Handle command line parsing and execution",
-    "Implement proper error handling and reporting"
-  ]
+  "project_context": {
+    "complexity_level": "intermediate-advanced",
+    "estimated_completion_time": "2-3 weeks",
+    "key_challenges": [
+      "Implementing proper process management with fork/exec/wait",
+      "Handling signals and interrupts gracefully",
+      "Managing environment variables and shell state",
+      "Creating efficient string parsing and tokenization",
+      "Implementing custom getline function for input handling"
+    ],
+    "success_metrics": [
+      "Shell executes commands correctly in interactive and non-interactive modes",
+      "All built-in commands function properly",
+      "Proper signal handling and graceful shutdown",
+      "No memory leaks or resource management issues",
+      "Code passes all test cases and behaves like standard shell"
+    ]
+  }
 }

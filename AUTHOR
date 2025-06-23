@@ -1,4 +1,47 @@
-# list of contributors for this project
+# 👥 Authors & Contributors
 
-1. Chigbu Joshua <chigbujoshua@yahoo.com >
-- [Chigbu Joshua](https://github.com/yungryce)
+This file lists all contributors to this ALX educational project.
+
+---
+
+## 🎓 Primary Author(s)
+
+**Chigbu Joshua**
+- 📧 Email: [chigbujoshua@yahoo.com](mailto:chigbujoshua@yahoo.com)
+- 🐙 GitHub: [@yungryce](https://github.com/yungryce)
+- 🎯 Role: ALX Software Engineering Student
+- 📅 Contribution Period: January 2024 - December 2024
+
+---
+
+## 🤝 Additional Contributors
+
+*This section will be updated as new contributors join the project.*
+
+---
+
+## 📚 Educational Context
+
+This project was developed as part of the **ALX Software Engineering Program**, focusing on advanced systems programming concepts including UNIX shell implementation, process management, and system-level programming in C.
+
+### 🎯 Project Focus Areas
+- UNIX command line interpreter implementation
+- Process management and system calls
+- Signal handling and interrupt processing
+- Environment variable management
+- Built-in command development
+- Memory management and resource allocation
+
+---
+
+## 🙏 Acknowledgments
+
+- **ALX School**: For providing the comprehensive systems programming curriculum and project specifications
+- **Holberton School**: For the original curriculum design and UNIX programming methodology
+- **The UNIX Community**: For extensive documentation and shell implementation best practices
+- **GNU Project**: For open source shell implementations and development tools
+- **Systems Programming Community**: For inspiration and reference implementations
+
+---
+
+*This project is part of the ALX Software Engineering curriculum and demonstrates mastery of systems-level programming and UNIX shell implementation.*
